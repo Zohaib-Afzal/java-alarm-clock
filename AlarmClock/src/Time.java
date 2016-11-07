@@ -6,7 +6,6 @@ import java.io.File;
 
 public class Time
 {
-	
 	private int minutes;
 	private int seconds;
 	private int hours;
@@ -24,25 +23,34 @@ public class Time
 		Scanner inputminutes = new Scanner (System.in);
 		System.out.println("Please enter the number of seconds you want to rest");
 		String counterhours = inputseconds.nextLine();
-		int totalseconds = Integer.parseInt(counterhours)	;
+		int totalseconds = Integer.parseInt(counterhours);
 		int neutralizer = 1;
 		long timeStart = System.currentTimeMillis();  
+		
 		for(int q = 0; q<3; q++)
 		{
 			neutralizer*=10;
 		}
+		
 		long estimatedTime = System.currentTimeMillis() - timeStart;
+		
 		while(estimatedTime/neutralizer<totalseconds)
 		{
-			try {
+			try 
+			{
 				Thread.sleep(1000);
-			} catch (InterruptedException e) 
+			} 
+			
+			catch (InterruptedException e) 
 			{
 				e.printStackTrace();
 			}
+			
 			estimatedTime = System.currentTimeMillis()-timeStart;
+			
 		}
-		System.out.println("ring ring mothafocka");
+		
+		System.out.println("SURPRISE M**********R");
 		File ring = new File("siren.WAV");
 		Surprise(ring);
 	}
@@ -56,6 +64,7 @@ public class Time
 				long totalFrames = (long)(clip.getFrameLength() * clip.getFormat().getFrameRate());
 			    Thread.sleep( ( totalFrames* 1000 ));
 			}
+			
 			catch(Exception e)
 			{
 				e.printStackTrace(System.out);
