@@ -50,7 +50,7 @@ public class Time
 			
 		}
 		
-		System.out.println("SURPRISE M**********R");
+		System.out.println("SURPRISE");
 		File ring = new File("siren.WAV");
 		Surprise(ring);
 	}
